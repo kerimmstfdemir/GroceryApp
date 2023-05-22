@@ -1,0 +1,64 @@
+<!-- Tablo -->
+<table class="table table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Fullname</th>
+      <th>Gender</th>
+      <th>Occupation</th>
+      <th>Birthday</th>
+      <th>Email</th>
+      <th>WebSite</th>
+      <th>Ad-Sub.</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Phone-Numbers</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Tablo satırları -->
+    <tr *ngFor="let customer of customers">
+      <td>{{ customer.id }}</td>
+      <td>{{ customer.fullName }}</td>
+      <td>{{ customer.gender }}</td>
+      <td>{{ customer.occupation }}</td>
+      <td>{{ customer.birthDate }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.website }}</td>
+      <td>{{ customer.subscribeToAds }}</td>
+      <td>{{ customer.address }}</td>
+      <td>{{ customer.city }}</td>
+      <td>{{ customer.phoneNumbers }}</td>
+      <td>{{ customer.notes }}</td>
+      <td class="d-flex justify-content-center" style="gap: 0.2rem;">
+        <!-- Edit Button -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" (click)="openEditCustomerModal(customer)">Edit</button>
+        <!-- Edit Button -->
+        <button type="button" class="btn btn-danger" >Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Edit Modal -->
+<div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Customer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Edit Form -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" (click)="updateCustomer()">Update</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
