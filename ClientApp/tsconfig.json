@@ -1,6 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "types": [
+      "jquery"
+    ],
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

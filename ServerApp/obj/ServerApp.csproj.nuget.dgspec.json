@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kerim\\Desktop\\Angular Project\\GroceryApp\\ServerApp\\ServerApp.csproj": {}
+    "C:\\Users\\kerim\\Desktop\\git project\\GroceryApp\\ServerApp\\ServerApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kerim\\Desktop\\Angular Project\\GroceryApp\\ServerApp\\ServerApp.csproj": {
+    "C:\\Users\\kerim\\Desktop\\git project\\GroceryApp\\ServerApp\\ServerApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kerim\\Desktop\\Angular Project\\GroceryApp\\ServerApp\\ServerApp.csproj",
+        "projectUniqueName": "C:\\Users\\kerim\\Desktop\\git project\\GroceryApp\\ServerApp\\ServerApp.csproj",
         "projectName": "ServerApp",
-        "projectPath": "C:\\Users\\kerim\\Desktop\\Angular Project\\GroceryApp\\ServerApp\\ServerApp.csproj",
+        "projectPath": "C:\\Users\\kerim\\Desktop\\git project\\GroceryApp\\ServerApp\\ServerApp.csproj",
         "packagesPath": "C:\\Users\\kerim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kerim\\Desktop\\Angular Project\\GroceryApp\\ServerApp\\obj\\",
+        "outputPath": "C:\\Users\\kerim\\Desktop\\git project\\GroceryApp\\ServerApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kerim\\AppData\\Roaming\\NuGet\\NuGet.Config"

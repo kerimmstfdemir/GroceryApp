@@ -1,9 +1,11 @@
+<div *ngIf="message" class="alert alert-success">{{ message }}</div>
+
 <!-- Tablo -->
 <table class="table table-bordered table-condensed">
   <thead>
     <tr>
       <th>Id</th>
-      <th>Fullname</th>
+      <th>Full Name</th>
       <th>Gender</th>
       <th>Occupation</th>
       <th>Birthday</th>
@@ -53,7 +55,51 @@
       </div>
       <div class="modal-body">
         <!-- Edit Form -->
+        <form [formGroup]="form">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" id="fullName" formControlName="fullName">
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <input type="text" class="form-control" id="gender" formControlName="gender">
+          </div>
+          <div class="form-group">
+            <label for="occupation">Occupation</label>
+            <input type="text" class="form-control" id="occupation" formControlName="occupation">
+          </div>
+          <div class="form-group">
+            <label for="birthDate">Birth Date</label>
+            <input type="date" class="form-control" id="birthDate" formControlName="birthDate">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+          </div>
+          <div class="form-group">
+            <label for="website">Website</label>
+            <input type="text" class="form-control" id="website" formControlName="website">
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="subscribeToAds" formControlName="subscribeToAds">
+              <label class="form-check-label" for="subscribeToAds">Subscribe to Ads</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" formControlName="address">
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" id="city" formControlName="city">
+          </div>
 
+          <div class="form-group">
+            <label for="notes">Notes</label>
+            <textarea class="form-control" id="notes" formControlName="notes"></textarea>
+          </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="submit" class="btn btn-primary" (click)="updateCustomer()">Update</button>
