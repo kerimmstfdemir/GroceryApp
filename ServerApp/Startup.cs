@@ -27,14 +27,16 @@ namespace ServerApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CustomerContext>(x=>x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddCors();
+            services.AddDbContext<CustomerContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<PhoneNumbersContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllers();
 
             services.AddControllers()
-        .AddJsonOptions(options =>
-        {
-            options.JsonSerializerOptions.MaxDepth = 64; 
-        });
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.MaxDepth = 64;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +46,13 @@ namespace ServerApp
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin();
+                builder.AllowAnyMethod();
+                builder.AllowAnyHeader();
+            });
 
             app.UseRouting();
 
