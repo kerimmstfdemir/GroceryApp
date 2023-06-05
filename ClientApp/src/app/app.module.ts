@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CustomersComponent } from './customers/customers.component';
 import { NewCustomerFormComponent } from './new-customer-form/new-customer-form.component';
-import { SearchComponent } from './search/search.component';
+
 import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 
 @NgModule({
@@ -16,7 +16,6 @@ import { EditCustomerComponent } from './edit-customer/edit-customer.component';
     NavbarComponent,
     CustomersComponent,
     NewCustomerFormComponent,
-    SearchComponent,
     EditCustomerComponent
   ],
   imports: [

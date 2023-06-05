@@ -1,3 +1,14 @@
+
+<div class="d-flex justify-content-center">
+  <nav class="navbar navbar-light bg-light d-flex justify-content-center" style="margin-top: 3.8rem;">
+    <form class="form-inline" (ngSubmit)="search()">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </nav>
+</div>
+
+
 <div *ngIf="message" class="alert alert-success">{{ message }}</div>
 
 <!-- Table -->
@@ -95,28 +106,31 @@
             <input type="text" class="form-control" id="city" formControlName="city">
           </div>
 
-          <!-- Phone Numbers Section -->
-          <div>
-            <div class="form-group">
-              <label>Phone Numbers</label>
-              <ul class="list-group">
-                <li class="list-group-item d-flex" *ngFor="let phoneNumber of phoneNumbers; let i = index">
-                  <input type="text" class="form-control" [(ngModel)]="phoneNumbers[i].number" [value]="phoneNumber.number">
-                  <button type="button" class="btn btn-sm btn-danger float-right" style="margin-left: -1.53rem;" (click)="deletePhoneNumber(phoneNumber.id)">x</button>
-                  <button type="button" class="btn btn-sm btn-success float-right" (click)="updatePhoneNumber(phoneNumber)">&#10004;</button>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Add Phone Number -->
-            <div class="form-group">
-              <div class="row">
-                <div class="col">
-                  <button type="button" class="btn btn-primary" (click)="addPhoneNumber()">Add</button>
-                </div>
-              </div>
+          <!-- Display existing phone numbers -->
+      <div *ngIf="phoneNumbers.length > 0" class="form-group">
+        <label>Phone Numbers:</label>
+        <div formArrayName="phoneNumbers">
+          <div *ngFor="let phone of phoneNumbers; let i = index" [formGroupName]="i" class="input-group">
+            <input type="text" class="form-control" formControlName="number">
+            <div class="input-group-append">
+              <button class="btn btn-primary" (click)="updatePhoneNumber(phone)">Update</button>
+              <button class="btn btn-danger" (click)="deletePhoneNumber(phone.id)">Delete</button>
             </div>
           </div>
+        </div>
+      </div>
+
+      <!-- Add phone number form -->
+      <div class="form-group">
+        <label><u>New Phone Number</u></label>
+        <div class="input-group">
+          <input type="text" [(ngModel)]="newPhoneNumber" formControlName="newPhoneNumber" class="form-control" name="phoneNumber" placeholder="Enter phone number">
+
+          <div class="input-group-append">
+            <button class="btn btn-success" (click)="addPhoneNumber()">Add</button>
+          </div>
+        </div>
+      </div>
 
 
           <div class="form-group">
